@@ -64,7 +64,7 @@ jobs:
     environment: dev
     steps:
       - name: Download build artifact
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbad69d21a # v4.3.0
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: site-dist
           path: dist/
@@ -94,7 +94,7 @@ jobs:
     environment: production  # Requires approval via GitHub Environment protection rules
     steps:
       - name: Download build artifact
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbad69d21a # v4.3.0
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: site-dist
           path: dist/
