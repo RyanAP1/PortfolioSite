@@ -1,0 +1,7 @@
+# Accepted risk for a low-risk personal static site fronted by CloudFront.
+# No WAF is currently planned for this portfolio deployment.
+AWS-0011
+
+# Accepted risk for this portfolio bucket. Customer-managed KMS is not justified
+# for a static site; SSE-S3 may be added later without requiring a CMK.
+AWS-0132
