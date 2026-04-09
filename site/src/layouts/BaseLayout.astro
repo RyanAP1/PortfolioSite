@@ -5,6 +5,7 @@ export interface Props {
 }
 
 const { title, description = 'DevOps & SRE Engineer — Portfolio & Resume Site' } = Astro.props;
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ---
 
 <!doctype html>
@@ -17,6 +18,19 @@ const { title, description = 'DevOps & SRE Engineer — Portfolio & Resume Site'
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    {gaMeasurementId && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+        <script is:inline define:vars={{ gaMeasurementId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', gaMeasurementId);
+        </script>
+      </>
+    )}
     <script is:inline>
       // Apply dark mode before paint to prevent flash
       if (
