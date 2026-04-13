@@ -9,6 +9,9 @@ on:
 permissions:
   contents: read
 
+env:
+  PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
+
 jobs:
   lint:
     name: Lint
