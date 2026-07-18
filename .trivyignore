@@ -5,3 +5,8 @@ AWS-0011
 # Accepted risk for this portfolio bucket. Customer-managed KMS is not justified
 # for a static site; SSE-S3 may be added later without requiring a CMK.
 AWS-0132
+
+# Accepted risk for this personal resume site while Astro remains pinned to a
+# version that has known CVEs but is still safe for static-site use.
+CVE-2026-50146
+CVE-2026-54299
