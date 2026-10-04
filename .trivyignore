@@ -10,3 +10,14 @@ AWS-0132
 # version that has known CVEs but is still safe for static-site use.
 CVE-2026-50146
 CVE-2026-54299
+
+# Same Astro 5.x pin as above. RCE is in the AVIF image-optimization path; the
+# site does not use astro:assets / <Image> / <Picture>, so it is not reachable.
+# Fix requires Astro 7.2.8. Revisit when the Tailwind upgrade unblocks Astro.
+GHSA-26w7-cxv4-gfx2
+
+# No fixed version published yet. Build-time only: braces via tailwindcss
+# (chokidar/micromatch), http-cache-semantics via astro. Neither ships in the
+# static output. Remove once upstream releases a fix.
+CVE-2026-93687
+CVE-2026-93748
